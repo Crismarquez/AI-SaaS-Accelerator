@@ -1,0 +1,9 @@
+## Assistants Rules
+
+- Expose `POST /assistants/complete` for simple text completion; later add tools and memory.
+- Read `OPENAI_API_KEY` from env; keep provider abstraction for future LLMs.
+- Define DTOs for requests/responses in `shared.dtos` when shared across services.
+- Streaming responses optional; default non-streaming for MVP.
+- Safety: filter prompts minimally (no secrets); log inputs with redaction.
+- Timeouts and retries wrapping API calls; exponential backoff when needed.
+

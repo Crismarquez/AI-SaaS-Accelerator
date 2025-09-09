@@ -1,0 +1,14 @@
+## Always Rules
+
+- Use Python 3.11, FastAPI, SQLAlchemy 2.x.
+- Local DB: SQLite; Cloud DB: PostgreSQL via `DATABASE_URL`.
+- Services layout: `main.py`, `config/`, `models/`, `routers/`, `schemas/`, `services/`, `utils/`, `tests/`, `Dockerfile`, `requirements.txt`.
+- Shared module provides `settings`, `dtos`, `errors`, `utils`.
+- Health endpoint required: `GET /health` returns `{ "status": "ok" }`.
+- Use `pydantic v2` models in `schemas` and DTOs; enable `from_attributes` when mapping ORM.
+- Add OpenAPI tags per router.
+- Keep functions pure where possible; DB operations live in `services/`.
+- Enforce idempotent setup: create tables on startup in local; migrations for cloud (future).
+- Logging: use `logging` stdlib; no prints.
+- Testing: `pytest`, minimal health test per service.
+

@@ -1,0 +1,10 @@
+## Payments Rules
+
+- Provide `POST /payments/pay` with provider-agnostic request schema.
+- Read provider keys from env (e.g., `PAYMENT_PROVIDER_API_KEY`).
+- Implement provider adapters under `services/` (e.g., Stripe, MercadoPago) with a common interface.
+- Idempotency: require `idempotency_key` on payment requests; ensure safe retries.
+- Log payment events (no PII); return minimal receipt info.
+- Timeouts and retries for provider calls (`shared.utils.retry`).
+- Webhooks: future work; prepare router placeholder.
+

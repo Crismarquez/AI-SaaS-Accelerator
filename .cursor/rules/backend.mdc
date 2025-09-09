@@ -1,0 +1,14 @@
+## Backend Patterns
+
+- Project structure per service as defined in Always Rules.
+- `config/` holds `settings.py` and `database.py` (SQLAlchemy engine, session, Base, `get_db`).
+- `models/` define ORM classes with `__tablename__`, typed columns, indices.
+- `schemas/` define Pydantic v2 models: `Create`, `Read`, `Update` where needed.
+- `services/` encapsulate DB logic; routers call services via DI (`Depends(get_db)`).
+- `routers/` expose HTTP endpoints, with clear prefixes and tags.
+- Use `HTTPException` for validation conflicts; map domain errors where relevant.
+- Transactions: keep short; `commit()` after writes, `refresh()` for returns.
+- Pagination: accept `limit`, `offset` defaults (`limit<=100`).
+- Validation: rely on Pydantic; no raw dicts in handlers.
+- Security: add auth later; endpoints kept public for MVP unless specified.
+
