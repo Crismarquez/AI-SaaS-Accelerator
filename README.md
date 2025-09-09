@@ -47,7 +47,7 @@ services:
     name: core-backend
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "uvicorn core.backend.main:app --host 0.0.0.0 --port $PORT"
+    startCommand: "uvicorn core.main:app --host 0.0.0.0 --port $PORT"
 
   - type: web
     name: payments
@@ -82,7 +82,7 @@ services:
 
 3. **Run locally**  
    ```bash
-   uvicorn core.backend.main:app --reload
+   uvicorn core.main:app --reload
    uvicorn modules.payments.main:app --reload --port 8001
    ```
 
