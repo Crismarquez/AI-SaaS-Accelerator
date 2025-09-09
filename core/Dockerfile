@@ -6,7 +6,7 @@ COPY ../../requirements /app/requirements
 COPY requirements.txt /app/core/requirements.txt
 RUN pip install --no-cache-dir -r /app/core/requirements.txt
 
-COPY . /app/core/backend
+COPY . /app/core
 
 ENV PYTHONPATH=/app
 
