@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from core.backend.main import app
+from core.main import app
 
 
 client = TestClient(app)

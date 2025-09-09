@@ -10,6 +10,6 @@ COPY . /app/core/backend
 
 ENV PYTHONPATH=/app
 
-CMD ["uvicorn", "core.backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "core.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 
