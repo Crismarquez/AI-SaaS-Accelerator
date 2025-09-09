@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: core-backend-staging
-    env: docker
-    dockerfilePath: core/Dockerfile
-    dockerContext: .
-    plan: free
-
